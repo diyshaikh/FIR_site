@@ -97,8 +97,8 @@
           <button class="btn" onclick="window.location.href='update.php'">Update</button>
           <button class="btn" onclick="window.location.href='joining.php'">Complete FIR</button>
 
-          <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim</button>
-          <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal</button>
+          <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim data</button>
+          <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal data</button>
 
 	</div>
                 </div>
