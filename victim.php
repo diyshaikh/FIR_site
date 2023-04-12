@@ -11,7 +11,7 @@ include ("db_connect.php") ;
       $insert = mysqli_query($connect, "INSERT INTO victim_data(Name, Place, Victim_FIR,Statement, District, UID) VALUES('$Name', '$Place', '$Victim_FIR', '$Statement', '$District', '$UID')");
     
     if($insert) {
-        header('location: sesion.php');
+        header('location: criminal.html');
       }
       else{
         echo 'could not connect';      

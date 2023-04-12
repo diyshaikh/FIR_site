@@ -43,7 +43,7 @@ CREATE TABLE `criminal_data` (
 --
 
 CREATE TABLE `victim_data` (
-  `NAme` varchar(100) NOT NULL,
+  `Name` varchar(100) NOT NULL,
   `Place` varchar(100) NOT NULL,
   `Victim_FIR` varchar(100) NOT NULL,
   `Statement` varchar(100) NOT NULL,

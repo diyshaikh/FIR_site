@@ -14,7 +14,7 @@ include ("db_connect.php");
 
         
       if($insert) {
-        header('location: end.html');
+        header('location: home.php');
       }
       else{
         echo ' Sorry cannot connect '
