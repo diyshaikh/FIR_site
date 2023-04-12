@@ -1,7 +1,7 @@
 <?php  
  include ("db_connect.php");
  $sql = mysqli_query($connect, " SELECT * FROM victim_data right join criminal_data on criminal_data.Criminal_FIR = victim_data.Victim_FIR ") or die('query failed'); 
- $ipc = mysqli_query($connect, " SELECT * from criminal_data join ipc_data on criminal_data.IPC_app = ipc_data.IPC_number");
+ $ipc = mysqli_query($connect, " SELECT * from criminal_data join ipc on criminal_data.IPC_app = ipc.IPC_number");
  $criminal= mysqli_query($connect, " SELECT * from victim_data");
 
  ?>
@@ -68,6 +68,8 @@
                 <div class="table-responsive">  
                      <table class="table table-striped">  
                           <tr>  
+                          <form id="Register"class="inputgroup"method="POST" action="view2.php" enctype="multipart/form-data">
+
                           <th>FIR number</th>
                               
                           <th>Victim's Name</th>  
@@ -103,13 +105,18 @@
        <td><?php echo $fetch_message["Crime"];?></td>
        <td><?php echo $row["IPC_number"];?></td> 
        <td><?php echo $row["IPC"];?></td> 
-       <td><button class="btn" onclick="window.location.href='view.php'"> View FIR</button></td>
+     
+       <td> <button input type="submit"    
+
+       class="btn" a href="view2.php?id=123">View Details</a></button></td>
 
 
 
 
   
 </tr>  
+
+
                           <?php  
                                }  
                           }  
@@ -117,7 +124,7 @@
                           ?>  
                      </table>  
                      <div class="button-container">
-          <button class="btn" onclick="window.location.href='home.php'">Home </button>
+          <button class="btn" a href="home.php">Home</a></button>
 
 	</div>
                 </div>  

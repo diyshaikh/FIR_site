@@ -1,9 +1,22 @@
 <?php  
  include ("db_connect.php");
- $sql = mysqli_query($connect, " SELECT * FROM victim_data right join criminal_data on criminal_data.Criminal_FIR = victim_data.Victim_FIR ") or die('query failed'); 
- $ipc = mysqli_query($connect, " SELECT * from criminal_data join ipc on criminal_data.IPC_app = ipc.IPC_number");
- $criminal= mysqli_query($connect, " SELECT * from victim_data");
-
+ if(isset($_GET['Victim_FIR'])) {
+    $Victim_FIR = $_GET['Victim_FIR'];
+    
+    // Call stored procedure with the selected ID
+    $proc = mysqli_query($connect, "CALL get_details(in Victim_FIR int)");
+    if($proc) {
+        $proc_message = mysqli_fetch_assoc($proc);
+        $message = $proc_message['message'];
+      } 
+      else {
+        $message = "Error: could not retrieve message";
+      }
+    } 
+else 
+{
+      $message = "Please select a valid ID";
+}
  ?>
  <!DOCTYPE html>  
  <html>  
@@ -68,20 +81,22 @@
                 <div class="table-responsive">  
                      <table class="table table-striped">  
                           <tr>  
-
-                          </tr>  
+                          <th>Complete FIR</th>
+                        </tr>  
                           
                           <?php
                           
-      if(mysqli_num_rows($sql) > 0 and mysqli_num_rows($ipc) > 0){
-      while($fetch_message = mysqli_fetch_assoc($sql) and $row = mysqli_fetch_assoc($ipc) and $col = mysqli_fetch_assoc($criminal)){
+      if(mysqli_num_rows($proc) > 0 ){
+      while($fetch_message = mysqli_fetch_assoc($proc)){
       
    ?><tr>  
+        <td><?php echo $fetch_message["message"];?></td>  
+
 
 
   
 </tr>  
-                             <?php  
+                          <?php  
                                }  
                           }  
 
