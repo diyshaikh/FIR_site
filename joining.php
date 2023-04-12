@@ -68,7 +68,6 @@
                 <div class="table-responsive">  
                      <table class="table table-striped">  
                           <tr>  
-                          <form id="Register"class="inputgroup"method="POST" action="view2.php" enctype="multipart/form-data">
 
                           <th>FIR number</th>
                               
@@ -124,11 +123,12 @@
                           ?>  
                      </table>  
                      <div class="button-container">
-          <button class="btn" a href="home.php">Home</a></button>
-
-	</div>
+          <button class="btn" onclick="window.location.href='home.php'">HOME </button>
+                         </div>
+                    
                 </div>  
            </div>  
+           
            <br />  
       </body>  
  </html>
