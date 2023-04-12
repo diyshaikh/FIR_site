@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                      <table class="table table-striped">  
                           <tr>
   <h1>delete Record</h1>
-  <form id="Register"class="inputgroup"method="POST" action="delete.php" enctype="multipart/form-data">
+  <form id="Register"class="inputgroup"method="POST" action="delete_vic.php" enctype="multipart/form-data">
 
     <label for="Victim_FIR">Victim_FIR:</label>
     <input type="text" name="Victim_FIR" id="Victim_FIR" ><br><br>
