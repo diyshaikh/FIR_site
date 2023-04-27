@@ -26,8 +26,8 @@
 	<link rel="stylesheet" href="css/home.css"> 
 
 	 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">-->
-	<link href="joining.css" rel="stylesheet"> -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+	<link href="joining.css" rel="stylesheet"> 
  
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -45,9 +45,9 @@
 	<script src="js/jquery.counterup.min.js"></script>
 	<script src="js/parallax.min.js"></script>
 	<script src="js/mail-script.js"></script>
-	<script src="js/main.js"></script> -->
+	<script src="js/main.js"></script> 
 
-	 <title>First Information Report</title>-->
+	 <title>First Information Report</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
@@ -57,14 +57,17 @@
 			justify-content: center;
 			align-items: center;
 			margin-top: 0px;
+               position: relative;
+               top:100px;  
+
 		}
 
 		.btn {
 			background-color
-: #4ca2cd; /* Green */
+: white; /* Green */
   border: none;
-  color: white;
-  width: 300px; /* Fixed width */
+  color: black;
+  width: 210px; /* Fixed width */
   height: 50px; /* Fixed height */
   text-align: center;
   text-decoration: none;
@@ -72,7 +75,7 @@
   font-size: 16px;
   margin: 10px;
   position: relative;
-  top: -10px;
+  top: 10px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -127,16 +130,18 @@
                      </table>
                 </form>
                 <br><br>
-                <div class="button-container">
+                
+        </div>
+        
+     </div>
+      </body>
+      <div class="button-container">
     <button class="btn" onclick="window.location.href='victim.html'">Add</button>
     <button class="btn" onclick="window.location.href='search.php'">Search and update FIR</button>
     <button class="btn" onclick="window.location.href='joining.php'">Complete FIR</button>
     <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim data</button>
     <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal data</button>
 
-            </div>
-        </div>
-     </div>
-      </body>
+            </div>  
  </html>
                          

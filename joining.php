@@ -1,7 +1,7 @@
 <?php  
  include ("db_connect.php");
- $sql = mysqli_query($connect, " SELECT * FROM victim_data right join criminal_data on criminal_data.Criminal_FIR = victim_data.Victim_FIR ") or die('query failed'); 
- $ipc = mysqli_query($connect, " SELECT * from criminal_data join ipc on criminal_data.IPC_app = ipc.IPC_number");
+ $sql = mysqli_query($connect, " SELECT * FROM victim_data join criminal_data on criminal_data.Criminal_FIR = victim_data.Victim_FIR ") or die('query failed'); 
+ $ipc = mysqli_query($connect, " SELECT * from criminal_data  join ipc on criminal_data.IPC_app = ipc.IPC_number");
  $criminal= mysqli_query($connect, " SELECT * from victim_data");
 
  ?>
@@ -27,29 +27,31 @@
 			justify-content: center;
 			align-items: center;
 			margin-top: 0px;
-		}
-          .btn {
+               position: relative;
+               top:100px;  
 
-  background-color: #4ca2cd; /* Green */
+		}
+
+		.btn {
+			background-color
+: white; /* Green */
   border: none;
-  color: white;
-  width: 100px; /* Fixed width */
+  color: black;
+  width: 210px; /* Fixed width */
   height: 50px; /* Fixed height */
   text-align: center;
   text-decoration: none;
-  display: block;
+  display: inline-block;
   font-size: 16px;
-  margin: 20px ;
+  margin: 10px;
   position: relative;
-  left: -0px;
-  top: -10px;
+  top: 10px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-          }
-  
+}
 
-  .btn:hover {
+		.btn:hover {
 			background-color: #3e8e41; /* Darker green */
 		}
 </style>
@@ -81,7 +83,6 @@
                                <th>Crime </th>  
                                <th>IPC number </th>  
                                <th>IPC </th>  
-                               <th>View FIR </th>
 
 
 
@@ -105,9 +106,8 @@
        <td><?php echo $row["IPC_number"];?></td> 
        <td><?php echo $row["IPC"];?></td> 
      
-       <td> <button input type="submit"    
+       <td>  
 
-       class="btn" a href="view2.php?id=123">View Details</a></button></td>
 
 
 
@@ -122,13 +122,13 @@
 
                           ?>  
                      </table>  
-                     <div class="button-container">
-          <button class="btn" onclick="window.location.href='home.php'">HOME </button>
-                         </div>
-                    
+                
                 </div>  
            </div>  
-           
+     
+           <div class="button-container">
+    <button class="btn" onclick="window.location.href='home.php'">Home</button>
+                         </div>
            <br />  
       </body>  
  </html>

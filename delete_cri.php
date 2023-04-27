@@ -6,17 +6,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $Criminal_FIR = $_POST['Criminal_FIR'];
   
   // Generate the SQL query to delete the record
-  $deleteQuery = "DELETE FROM criminal_data WHERE Criminal_FIR = '" . mysqli_real_escape_string($connect, $Criminal_FIR) . "'";
-  // Prompt the user for confirmation before executing the delete query
-  echo '<script>
-        if (confirm("Are you sure you want to delete this record?")) {
-          ' . mysqli_query($connect, $deleteQuery) . '
-          alert("Record deleted successfully");
-          window.location.href = "home.php";
-        } else {
-          alert("Record not deleted");
-        }
-      </script>';
+  $deleteQuery = "DELETE FROM Criminal_data WHERE Criminal_FIR = '" . mysqli_real_escape_string($connect, $Criminal_FIR) . "'";
+
+// Prompt the user for confirmation before executing the delete query
+echo '<script>
+if (confirm("Are you sure you want to delete this record?")) {
+  ' . mysqli_query($connect, $deleteQuery) . '
+  alert("Record deleted successfully");
+  window.location.href = "home.php";
+} else {
+  alert("Record not deleted");
+}
+</script>';
   
   // Close the database connection
   mysqli_close($connect);
@@ -87,10 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                      <table class="table table-striped">  
                           <tr>
   <h1>delete Record</h1>
-  <form id="Register"class="inputgroup"method="POST" action="delete_vic.php" enctype="multipart/form-data">
+  <form id="Register"class="inputgroup"method="POST" action="delete_cri.php" enctype="multipart/form-data">
 
     <label for="Criminal_FIR">Criminal_FIR:</label>
-    <input type="text" Criminal_Name="Criminal_FIR" id="Criminal_FIR" ><br><br>
+    <input type="text" name="Criminal_FIR" id="Criminal_FIR" ><br><br>
                          </tr> 
     <input type="submit" value="delete Record">
     <div class="button-container">
@@ -99,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</div>
     
   </form>
+  </div0>
 </body>
 </html>
 

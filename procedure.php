@@ -1,52 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Get Victim Details</title>
+<?php
+include("db_connect.php");
+
+// Check if the form has been submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Get the Victim_FIR number from the form
+  $Victim_FIR = $_POST['Victim_FIR'];
+
+  // TODO: Generate the SQL query to delete the record
+
+  // Prompt the user for confirmation before executing the delete query
+
+}
+
+// Close the database connection
+mysqli_close($connect);
+?>
+
+<!DOCTYPE html>  
+<html>  
+<head>   
+    <title>First Information Report</title>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <link rel="stylesheet" href="joining.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+
     <style>
-        /* Add your custom CSS styles here */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0px;
+        }
+
+        .btn {
+            background-color: #4ca2cd; /* Green */
+            border: none;
+            color: white;
+            width: 100px; /* Fixed width */
+            height: 50px; /* Fixed height */
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 20px;
+            position: relative;
+            left: -0px;
+            top: -10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #3e8e41; /* Darker green */
+        }
     </style>
-</head>
-<body>
-    <h1>Get Victim Details</h1>
-    <form method="post">
-        <label for="Victim_FIR">Victim FIR:</label>
-        <input type="text" name="Victim_FIR" required>
-        <input type="submit" name="submit" value="Get Details">
-    </form>
+</head>  
 
-    <?php
-    // Check if form is submitted
-    if(isset($_POST['submit'])) {
-        // Get Victim_FIR from form data
-        $Victim_FIR = $_POST['Victim_FIR'];
-
-        // Connect to database
-
-        // Check connection
-        include_once("db_connect.php");
-        if (mysqli_connect_errno()) {
-          echo "Failed to connect to MySQL: " . mysqli_connect_error();
-          exit();
-        }
-
-        // Call stored procedure to get victim details
-        $query = "CALL victim_details('$Victim_FIR')";
-        $result = mysqli_query($connect, $query);
-
-        // Check if query was successful
-        if($result) {
-            // Display victim details
-            while($row = mysqli_fetch_assoc($result)) {
-                echo "<p>" . $row['victim_details'] . "</p>";
-            }
-        } else {
-            // Display error message if query fails
-            echo "<p>Failed to get victim details.</p>";
-        }
-
-        // Close database connection
-        mysqli_close($connect);
-    }
-    ?>
-</body>
-</html>
+<body class="body">
+    <br />
+    <div class="div0">  
+        <div>
+            <div class="container" style="width:1000px;">  
+                <h1 align="">First Information Report</h1>
+                <br />                 
+                <div class="table-responsive">  
+                    <table class="table table-striped">  
+                        <tr>
+                            <h1>Display Record</h1>
+                            <form id="Register" class="inputgroup" method="POST" action="procedure.php" enctype="multipart/form-data">
+                                <label for="Victim_FIR">Victim_FIR:</label>
+                                <input type="text" name="Victim_FIR" id="Victim_FIR" ><br><br>
+                                <input type="submit" value="procedure">
+                                <div class="button-container">
+                                    <button class="btn" onclick="window.location.href='home.php'">Home </button>
+                                </div>
+                            </form>
+                        </tr> 
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+    </body>
+    </html>
