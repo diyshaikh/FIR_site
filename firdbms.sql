@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `criminal_data` (
-  `Name` varchar(100) NOT NULL,
+  `Criminal_Name` varchar(100) NOT NULL,
   `Date` varchar(100) NOT NULL,
   `Criminal_FIR` varchar(100) NOT NULL,
   `Type` varchar(100) NOT NULL,

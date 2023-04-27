@@ -10,6 +10,8 @@
     background-position: center;
     background-size: cover;
   }
+
+  
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
@@ -26,6 +28,16 @@
    
     
   }
+
+  .background{
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    background-image:linear-gradient(rgba(0, 0, 0,0.6),rgba(0, 0, 0,0.6)) ,url("officer.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
   
   .buttonbox{
     width: 220px;

@@ -1,23 +1,57 @@
 <?php
- include ("db_connect.php");
- $sql = mysqli_query($connect, " SELECT * FROM victim_data ");
+ include("db_connect.php");
+ $sql = mysqli_query($connect, "SELECT * FROM victim_data");
  ?>
- <!DOCTYPE html>
- <html>
 
-      <head>
-           <title>First Information Report</title>
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-           <link rel="stylesheet" href="joining.css">
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-           <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-<!-- Bootstrap CSS -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-<!-- Font Awesome CSS -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
-<style>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="img/fav.png">
+	<meta name="author" content="codepixer">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta charset="UTF-8">
+	<title>Home</title>
 
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+	 <link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css"> 
+	 <link rel="stylesheet" href="css/bootstrap.css"> 
+	 <link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/home.css"> 
+
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">-->
+	<link href="joining.css" rel="stylesheet"> -->
+ 
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+	<script src="js/easing.min.js"></script>
+	<script src="js/hoverIntent.js"></script>
+	<script src="js/superfish.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script src="js/mail-script.js"></script>
+	<script src="js/main.js"></script> -->
+
+	 <title>First Information Report</title>-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+	<style>
 		.button-container {
 			display: flex;
 			justify-content: center;
@@ -26,7 +60,8 @@
 		}
 
 		.btn {
-  background-color: #4ca2cd; /* Green */
+			background-color
+: #4ca2cd; /* Green */
   border: none;
   color: white;
   width: 300px; /* Fixed width */
@@ -47,18 +82,17 @@
 			background-color: #3e8e41; /* Darker green */
 		}
 	</style>
-</style>
-           <title>First Information Report</title>
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       </head>
       <body class="body">
-           <br />  <div class="div0">
+           <br/> 
+            <div class="div0">
 
           <div>
-           <div class="container" style="width:700px;">
-                <h1 align="">First Information Report</h1><br />
+          <div class="container" style="height: 500px; overflow-y: scroll;">
+                <h1 >First Information Report</h1><br />
                 <div class="table-responsive">
                      <table class="table table-striped">
                           <tr>
@@ -91,18 +125,18 @@
 
                           ?>
                      </table>
+                </form>
+                <br><br>
+                <div class="button-container">
+    <button class="btn" onclick="window.location.href='victim.html'">Add</button>
+    <button class="btn" onclick="window.location.href='search.php'">Search and update FIR</button>
+    <button class="btn" onclick="window.location.href='joining.php'">Complete FIR</button>
+    <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim data</button>
+    <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal data</button>
 
-                     <div class="button-container">
-          <button class="btn" onclick="window.location.href='victim.html'">Add </button>
-          <button class="btn" onclick="window.location.href='update.php'">Update</button>
-          <button class="btn" onclick="window.location.href='joining.php'">Complete FIR</button>
-
-          <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim data</button>
-          <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal data</button>
-
-	</div>
-                </div>
-           </div>
-           <br />
+            </div>
+        </div>
+     </div>
       </body>
  </html>
+                         

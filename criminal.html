@@ -1,72 +1,43 @@
 <html>
-  <head>
-    <title>Criminal's Data</title>
-    <link rel="stylesheet" href="style1.css" />
-    <style></style>
-  </head>
-  <body>
-    <div class="background">
-      <div class="formbox">
-        <div class="buttonbox">
-          <div id="btn"></div>
+    <head>
+        <title>
+            Register
+        </title>
+        <link rel="stylesheet" href="style5.css">
+        <style>
+            
+            </style>
+        </head>
+        <body>
+            <div class="background">
+            <div class="formbox">
+                <div class="buttonbox">
+                    <div id="btn"></div>
+                   
+                   <p class="toggle-btn" >Diksha</p>
+                    
+                   
+                        
+                   
+                        
+                        <form id="Register"class="inputgroup"method="POST" action="criminal.php" enctype="multipart/form-data">
+                        
+                             <input type="text" class="inputfield" placeholder="Criminal Name" id = "Criminal_Name" name = "Criminal_Name" >
+                            
+                            <input type="date" class="inputfield" placeholder="Date" id = "Date" name = "Date" >
+<input type="text" class="inputfield" placeholder="Criminal_FIR" id = "Criminal_FIR" name = "Criminal_FIR" >
+<input type="text" class="inputfield" placeholder="Type" id = "Type" name = "Type" >
+<input type="text" class="inputfield" placeholder="Crime" id = "Crime"name = "Crime" >
+<input type="text" class="inputfield" placeholder="IPC applied" id = "IPC_app" name = "IPC_app" >
+                        
+                              <br>
+                              
+                            <button type="submit" class="submitbtn">Signup</button>
+                                </form>
+                    </div>
 
-          <p class="toggle-btn">Criminal's Data</p>
-
-          <form
-            id="Criminal's Data"
-            class="inputgroup"
-            action="criminal.php"
-            method="POST"
-          >
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="Name"
-              name="Name"
-              required
-            />
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="Date"
-              name="Date"
-              required
-            />
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="Criminal_FIR"
-              name="Criminal_FIR"
-              required
-            />
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="Type"
-              name="Type"
-              required
-            />
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="Crime"
-              name="Crime"
-              required
-            />
-            <input
-              type="text"
-              class="inputfield"
-              placeholder="IPC_app"
-              name="IPC_app"
-              required
-            />
-
-            <br />
-
-            <button type="submit" class="submitbtn">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
+            </div>
+            </div>
+           
+    </body>
 </html>

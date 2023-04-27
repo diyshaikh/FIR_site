@@ -1,108 +1,144 @@
-<?php  
- include ("db_connect.php");
- $sql = mysqli_query($connect, " SELECT * FROM victim_data "); 
- ?>
- <!DOCTYPE html>  
- <html>  
+<?php
+	require("db_connect.php");
 
-      <head>   
-           <title>First Information Report</title>  
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-           <link rel="stylesheet" href="joining.css">
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-           <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-<!-- Bootstrap CSS -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-<!-- Font Awesome CSS -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+	  // Close the database connection
+	  mysqli_close($connect);
+	
+?>
 <style>
 
-		.button-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: 0px;
-		}
-
-		.btn {
-  background-color: #4ca2cd; /* Green */
-  border: none;
-  color: white;
-  width: 300px; /* Fixed width */
-  height: 50px; /* Fixed height */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px;
-  position: relative;
-  top: -10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-		.btn:hover {
-			background-color: #3e8e41; /* Darker green */
-		}
-	</style>
 </style>
-           <title>First Information Report</title>  
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-      </head>  
-      <body class="body">  
-           <br />  <div class="div0">
+<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title> Officer Login</title>
           
-          <div>
-           <div class="container" style="width:700px;">  
-                <h1 align="">First Information Report</h1><br />                 
-                <div class="table-responsive">  
-                     <table class="table table-striped">  
-                          <tr>  
-                               <th>FIR number</th>
-                               <th>Victim's Name</th>  
-                               <th>Place of crime</th>  
-                               <th>Statement of victim</th>  
-                               <th>District</th>
-                          </tr>  
-                          
-                          <?php
-                          
-      if(mysqli_num_rows($sql) > 0){
-      while($fetch_message = mysqli_fetch_assoc($sql)){
-      
-   ?><tr>  
-    <td><?php echo $fetch_message["Victim_FIR"];?></td>  
-   <td><?php echo $fetch_message["Name"];?></td>  
-   <td><?php echo $fetch_message["Place"];?></td>  
-   <td><?php echo $fetch_message["Statement"]; ?></td>
-   <td><?php echo $fetch_message["District"];?></td> 
 
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+               <link rel="stylesheet" href="style1.css" >
+			<link rel="stylesheet" href="css/nice-select.css">					
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>
 
+			
 
-  
-</tr>  
-                          <?php  
-                               }  
-                          }  
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">
+               <div class="background2">
 
-                          ?>  
-                     </table> 
+				<div class="overlay "></div>	
+				<div class="container">
+				
+					<div class="row fullscreen d-flex align-items-center justify-content-start">
+					
+						<div class="banner-content col-lg-12 text-center">
 
-                     <div class="button-container">
-          <button class="btn" onclick="window.location.href='victim.html'">Add </button>
-          <button class="btn" onclick="window.location.href='update.php'">Update</button>
-          <button class="btn" onclick="window.location.href='joining.php'">Complete FIR</button>
+							<b><i><p style="color: white; text-shadow: 1px 1px 2px black, 0 0 45px green, 0 0 45px darkgreen;font-family: times, serif; font-size:75px;" class="text-white">
+								First Information Report Management System
+							</p></i></b>
+							<button type="button"  class="primary-btn text-uppercase btn-center" data-toggle="modal" data-target="#myModal"> Login </button>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>			
+							<br/>
+							<br/>
+							<!--button type="button" class="primary-btn text-uppercase float-right" data-toggle="modal" data-target="#myModal"> Officer Login </button>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<br/>
+							<button type="button" class="primary-btn text-uppercase float-right" data-toggle="modal" data-target="#myModal"> Admin Login </button-->							
+						
+							<!-- Modal -->
+							<div class="modal fade" id="myModal" role="dialog">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title"> Login </h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<form action="login_submit.php" method="POST">
+												<div class="form-group">
+													<label> Email </label>
+													<input type="email" class="form-control"  placeholder="Email" name="e-mail" required = "true">
+												</div>
+												<div class="form-group">
+													<label> Password </label>
+													<input type="password" class="form-control" placeholder="Password" name="password" required = "true">
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
+													<button type="submit" name="submit" class="btn btn-primary" data-toggle="modal" data-target="#access"> Access </button>	
+												</div>
+											</form>
+										</div>										
+									</div>
+								</div>
+							</div>
+							<!-- Modal -->
+							
+							
+						</div>							
+					</div>
+					
+				</div>		
+</div>			
+			</section>
+			<!-- End banner Area -->	
 
-          <button class="btn" onclick="window.location.href='delete_vic.php'">Delete Victim</button>
-          <button class="btn" onclick="window.location.href='delete_cri.php'">Delete Criminal</button>
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+			<script src="js/owl.carousel.min.js"></script>			
+			<script src="js/jquery.sticky.js"></script>
+			<script src="js/jquery.nice-select.min.js"></script>	
+			<script src="js/waypoints.min.js"></script>
+			<script src="js/jquery.counterup.min.js"></script>					
+			<script src="js/parallax.min.js"></script>		
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+			
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 
-	</div>
-                </div>  
-           </div>  
-           <br />  
-      </body>  
- </html>
+			
+	</body>
+</html>

@@ -2,19 +2,22 @@
 include("db_connect.php");
 // Check if the form has been submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Get the Criminal_FIR number from the form
-  $Criminal_FIR = $_POST['Criminal_FIR'];
+  // Get the Victim_FIR number from the form
+  $Victim_FIR = $_POST['Victim_FIR'];
   
   // Generate the SQL query to delete the record
-  $deleteQuery = "DELETE FROM criminal_data WHERE Criminal_FIR = '" . mysqli_real_escape_string($connect, $Criminal_FIR) . "'";
-  
-  // Execute the delete query
-  if (mysqli_query($connect, $deleteQuery)) {
-    echo 'Record deleted successfully';
-    header('location: home.php');
-  } else {
-    echo 'Error deleting record: ' . mysqli_error($connect);
-  }
+  $deleteQuery = "DELETE FROM victim_data WHERE Victim_FIR = '" . mysqli_real_escape_string($connect, $Victim_FIR) . "'";
+
+// Prompt the user for confirmation before executing the delete query
+echo '<script>
+if (confirm("Are you sure you want to delete this record?")) {
+  ' . mysqli_query($connect, $deleteQuery) . '
+  alert("Record deleted successfully");
+  window.location.href = "home.php";
+} else {
+  alert("Record not deleted");
+}
+</script>';
   
   // Close the database connection
   mysqli_close($connect);
@@ -87,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <h1>delete Record</h1>
   <form id="Register"class="inputgroup"method="POST" action="delete_vic.php" enctype="multipart/form-data">
 
-    <label for="Criminal_FIR">Criminal_FIR:</label>
-    <input type="text" name="Criminal_FIR" id="Criminal_FIR" ><br><br>
+    <label for="Victim_FIR">Victim_FIR:</label>
+    <input type="text" name="Victim_FIR" id="Victim_FIR" ><br><br>
                          </tr> 
     <input type="submit" value="delete Record">
     <div class="button-container">
@@ -97,6 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</div>
     
   </form>
+  </div0>
 </body>
 </html>
 

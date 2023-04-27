@@ -63,7 +63,7 @@
            <br />  <div class="div0">
           
           <div>
-           <div class="container" style="width:1000px;">  
+           <div class="container" style="height: 500px; overflow-y: scroll;">  
                 <h1 align="">First Information Report</h1><br />                 
                 <div class="table-responsive">  
                      <table class="table table-striped">  
@@ -71,7 +71,7 @@
 
                           <th>FIR number</th>
                               
-                          <th>Victim's Name</th>  
+                          <th>Victim's Name</th>    
 
                                <th>Criminal's Name</th>  
                                <th>Place of crime</th>  
@@ -93,10 +93,10 @@
       while($fetch_message = mysqli_fetch_assoc($sql) and $row = mysqli_fetch_assoc($ipc) and $col = mysqli_fetch_assoc($criminal)){
       
    ?><tr>  
-        <td><?php echo $fetch_message["Criminal_FIR"];?></td>  
+        <td><?php echo $col["Victim_FIR"];?></td>  
 
        <td><?php echo $col["Name"];?></td> 
-       <td><?php echo $fetch_message["Name"];?></td>  
+       <td><?php echo $fetch_message["Criminal_Name"];?></td>  
        <td><?php echo $fetch_message["Place"];?></td>  
        <td><?php echo $fetch_message["Statement"]; ?></td>
        <td><?php echo $fetch_message["District"];?></td>  
